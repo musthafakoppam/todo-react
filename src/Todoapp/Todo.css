@@ -34,7 +34,7 @@
     margin: 2px;
     padding: 0px, 15px;
     border: none;
-    cursor: pointer;
+    cursor: pointer;    
     background: darkcyan;
     color: white;
 }
@@ -49,6 +49,7 @@
     margin: 0.5em;
 }
 .delete-btn{
+    font-size: .95em;
     border-radius: 5px;
     margin: 0px 5px;
     padding: 2px 5px;
@@ -57,4 +58,15 @@
     color: darkblue;
     float: right;
     background-color: lightblue;
+}
+.input:hover{
+    background: lightsteelblue;
+    width: 83%;
+}
+.add-btn:hover{
+font-size: 2.1em;
+}
+.delete-btn:hover{
+    /* border: 2px solid darkblue; */
+    font-size: .92em;
 }

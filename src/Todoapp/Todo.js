@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AddTask from './AddTask'
 import ListTasks from './ListTasks'
 import "./Todo.css";
@@ -22,6 +22,9 @@ const Todo = () => {
     setTasks(newTask);
   }
 
+  useEffect (() =>{
+    document.title = `You have ${tasks.length} pending task (s)`
+  })
 
   return (
     <>
@@ -35,7 +38,7 @@ const Todo = () => {
             <ListTasks task = {task} 
             removeTask ={removeTask}
             index= {index}
-            // key={index}
+            key={index}
             />
           ))}          
         </div>
