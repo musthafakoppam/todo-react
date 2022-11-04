@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ListTasks = () => {
+const ListTasks = ({task}) => {
   return (
     <>
       <div className='list-tasks'>
-        TaskName
+        {task.title}
         <button className='delete-btn'>
         Delete</button>
       </div>      
