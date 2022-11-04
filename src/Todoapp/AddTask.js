@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const AddTask = ({inTask}) => {
-  const [value, setValue] = useState (" ")
+  const [value, setValue] = useState ("")
 
 const addItem = () => {
   inTask(value);
-}
-  
+  setValue("");  
+};
 
   return (
     <>
@@ -15,9 +15,10 @@ const addItem = () => {
           type="text"
           className="input"
           placeholder="Add New Task"
+          value={value} 
           onChange={(e) => {
-            setValue(e.target.value);
-          }}
+            setValue(e.target.value);                                   
+          }}          
         />
         <button onClick={addItem} className="add-btn">ADD</button>
       </div>
@@ -26,3 +27,4 @@ const addItem = () => {
 };
 
 export default AddTask;
+ 

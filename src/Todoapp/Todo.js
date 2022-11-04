@@ -6,15 +6,23 @@ import "./Todo.css";
 
 const Todo = () => {
   const [tasks, setTasks]= useState ([
-    {title: "Learn HTML"},
-    {title: "Learn CSS"},
-    {title: "Learn JAVASCRIPT"}
+    // {title: "Learn HTML"},
+    // {title: "Learn CSS"},
+    // {title: "Learn JAVASCRIPT"}
   ])
 
   const inTask =(title) => {
     const newTask= [...tasks, {title}];
     setTasks (newTask);
   }
+
+  const removeTask = (index)=> {
+    const newTask = [...tasks]
+    newTask.splice (index,1);
+    setTasks(newTask);
+  }
+
+
   return (
     <>
     <div className='todo-container'>
@@ -23,8 +31,12 @@ const Todo = () => {
           <AddTask inTask = {inTask} />
         </div>
         <div className='tasks'>
-          {tasks.map((task) => (
-            <ListTasks task = {task} />
+          {tasks.map((task, index) => (
+            <ListTasks task = {task} 
+            removeTask ={removeTask}
+            index= {index}
+            // key={index}
+            />
           ))}          
         </div>
     </div>
